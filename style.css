@@ -27,3 +27,79 @@ button {
   font-size: 16px;
 }
 .hide { display: none; }
+/* ================= CHOCOLATE ANIMATION ================= */
+
+.choco-area {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.name {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.chocolate {
+  width: 120px;
+  height: 160px;
+  margin: auto;
+  position: relative;
+  cursor: pointer;
+}
+
+.wrapper {
+  position: absolute;
+  width: 120px;
+  height: 160px;
+  background: linear-gradient(#c69c6d, #8b5a2b);
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transition: transform 0.6s ease;
+  transform-origin: top;
+}
+
+.bar {
+  position: absolute;
+  width: 120px;
+  height: 160px;
+  background: #3b1f0b;
+  border-radius: 8px;
+}
+
+.chocolate.open .wrapper {
+  transform: rotateX(120deg);
+}
+
+.quote {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.chocolate.open + .quote {
+  opacity: 1;
+}
+
+/* ================= RAIN EFFECT ================= */
+
+.rain {
+  position: fixed;
+  top: -120px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.drop {
+  position: absolute;
+  width: 40px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  from { transform: translateY(-120px); }
+  to { transform: translateY(110vh); }
+}
