@@ -19,3 +19,27 @@ function makeLink() {
   navigator.clipboard.writeText(link);
   alert("Link copied 🍫");
 }
+/* ================= CHOCOLATE OPEN ANIMATION ================= */
+function openChoco() {
+  const choco = document.querySelector(".chocolate");
+  if (choco) {
+    choco.classList.toggle("open");
+  }
+}
+
+/* ================= CHOCOLATE + CANDY RAIN ================= */
+const rain = document.getElementById("rain");
+
+if (rain) {
+  const items = ["choco.png", "candy.png"];
+
+  for (let i = 0; i < 20; i++) {
+    let img = document.createElement("img");
+    img.src = items[Math.floor(Math.random() * items.length)];
+    img.className = "drop";
+    img.style.left = Math.random() * 100 + "vw";
+    img.style.animationDuration = (3 + Math.random() * 5) + "s";
+    img.style.opacity = Math.random();
+    rain.appendChild(img);
+  }
+}
